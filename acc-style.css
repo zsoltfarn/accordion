@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background-color: #111111;
+	font-family: Helvetica, Arial, "sans-serif";
+	color: #fff;
+	font-size: 20px;
+}
+
+p,div,h1 {
+	color: #8E8E8E;
+	padding: 0 10px 0 10px;
+}
+
+#container {
+	position: relative;
+	margin: 90px auto;
+	width: 70%;
+	background: #F9F9F9;
+	padding: 20px 23px;
+}
+
+.accordion {
+    background-color: #6149B2;
+    color: #fff;
+    cursor: pointer;
+    padding: 30px 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.5em;
+    transition: 0.4s;
+	font-family: "Arial Black", "sans-serif";
+	font-style: italic;
+	border-bottom: solid 5px #44337C;
+	margin-top: 3px;
+}
+
+.active, .accordion:hover {
+    background-color: #A3119B;
+}
+
+.accordion::after {
+	content: url("../icons/angle-down-solid.svg");
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.accordion:active{
+	position: relative;
+	top: 1px;
+	border-bottom: solid 4px #44337C;
+}
+
+.active::after {
+    content: url('../icons/angle-up-solid.svg');
+}
+
+div .panel {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+	border-bottom: solid 2px #EDEDED;
+	border-left: solid 2px #EDEDED;
+	border-right: solid 2px #EDEDED;
+	
+}
+
+/* #message {
+	margin: 0 auto;
+	background-color: coral;
+	color: #fff;
+	width: 300px;
+	padding: 20px 20px 20px;
+	text-align: center;
+	border-radius: 5px;
+	
+} */
+
+

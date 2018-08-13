@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Accordion Test</title>
+<link href="style/acc-style.css" rel="stylesheet" type="text/css">	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+	
+
+	
+<body>
+	<div id="container">
+
+	<button id="acc1" class="accordion">Section 2</button>
+<div  class="panel">
+  <p id="pan1"></p>
+</div>
+
+<button id="acc2" class="accordion">Section 5</button>
+<div  class="panel">
+  <p id="pan2"></p>
+</div>
+
+<button id="acc3" class="accordion">Section 7</button>
+<div class="panel">
+  <p  id="pan3"></p>
+	</div> 
+	
+	</div>
+	
+	<script>
+		fetch('https://design.propcom.co.uk/buildtest/accordion-data.json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    document.getElementById("acc1").innerHTML = myJson.blocks[0].heading;
+	document.getElementById("acc2").innerHTML = myJson.blocks[1].heading;
+	document.getElementById("acc3").innerHTML = myJson.blocks[2].heading;
+			
+			document.getElementById("pan1").innerHTML = myJson.blocks[0].content;
+	        document.getElementById("pan2").innerHTML = myJson.blocks[1].content;
+	        document.getElementById("pan3").innerHTML = myJson.blocks[2].content;		
+  });
+	</script>
+	
+	
+	
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() 
+						  {
+    this.classList.toggle("active");
+	  
+    var panel = this.nextElementSibling;
+	  
+    if (panel.style.maxHeight)
+		
+	{
+      panel.style.maxHeight = null;
+    } else 
+	
+	{
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>	
+</body>
+</html>
