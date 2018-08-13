@@ -35,7 +35,15 @@ p,div,h1 {
 	font-family: "Arial Black", "sans-serif";
 	font-style: italic;
 	border-bottom: solid 5px #44337C;
+	border-right: solid 5px #44337C;
 	margin-top: 3px;
+}
+
+.press:active {
+	border-bottom: solid 3px #44337C;
+	border-right: solid 3px #44337C;
+	margin-top: 5px;
+	transition: 0;
 }
 
 .active, .accordion:hover {
@@ -43,7 +51,7 @@ p,div,h1 {
 }
 
 .accordion::after {
-	content: url("../icons/angle-down-solid.svg");
+	content: '';
     color: #fff;
     font-weight: bold;
     float: right;
@@ -57,7 +65,7 @@ p,div,h1 {
 }
 
 .active::after {
-    content: url('../icons/angle-up-solid.svg');
+    content: '';
 }
 
 div .panel {
